@@ -32,7 +32,8 @@ class ShowHideLayers():
         characters = event.characters()
         modifierFlags = event.modifierFlags()
         if characters == "h":
-            f = CurrentFont()
+            glyph = info["glyph"]
+            f = glyph.font
             if len(f.layerOrder) > 1:
                 nextLayer = f.layerOrder[1]
                 # Get the current display status for the first non-foreground layer
