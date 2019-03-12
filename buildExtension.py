@@ -13,7 +13,7 @@ resourcesPath = os.path.join(basePath, "resources")
 B = ExtensionBundle()
 
 B.name = "Andy's RF Hacks"
-B.version = "1.0"
+B.version = "1.1"
 B.developer = "Andy Clymer"
 B.developerURL = 'http://www.andyclymer.com/'
 

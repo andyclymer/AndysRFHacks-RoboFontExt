@@ -30,8 +30,8 @@ class ShowHideLayers():
     def keyDown(self, info):
         event = info["event"]
         characters = event.characters()
-        modifierFlags = event.modifierFlags()
         if characters == "h":
+            modifierFlags = event.modifierFlags()
             glyph = info["glyph"]
             f = glyph.font
             if len(f.layerOrder) > 1:

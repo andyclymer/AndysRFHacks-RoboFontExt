@@ -80,20 +80,22 @@ class CompoonentSwitcher:
             dt.restore()
     
     def draw(self, info):
-        # scale = info["scale"]
-        fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 0.5)
-        fillColor.set()
-        self.drawGlyph()
+        if self.previousGlyph: # If the tool did switch from another glyph
+            fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 0.5)
+            fillColor.set()
+            self.drawGlyph()
     
     def drawPreview(self, info):
-        fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 1)
-        fillColor.set()
-        self.drawGlyph()
+        if self.previousGlyph: # If the tool did switch from another glyph
+            fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 1)
+            fillColor.set()
+            self.drawGlyph()
     
     def drawInactive(self, info):
-        fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 0.25)
-        fillColor.set()
-        self.drawGlyph()
+        if self.previousGlyph: # If the tool did switch from another glyph
+            fillColor = NSColor.colorWithCalibratedRed_green_blue_alpha_(0, 0, 0, 0.25)
+            fillColor.set()
+            self.drawGlyph()
             
     def inBounds(self, loc, bounds, boundsOffset=0):
         if (bounds[0] + boundsOffset) <= loc[0] <= (bounds[2] + boundsOffset):
@@ -102,8 +104,8 @@ class CompoonentSwitcher:
         return False
         
     def mouseDown(self, info):
-        if not self.currentGlyph == None:
-            if info["clickCount"] == 2:
+        if info["clickCount"] == 2:
+            if not self.currentGlyph == None:
                 mouseLoc = (info["point"].x, info["point"].y)
                 if not self.previousGlyph == None:
                     # There's a previous glyph being drawn, check to see if the double click is in its bouds
