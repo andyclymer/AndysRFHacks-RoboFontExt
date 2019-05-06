@@ -15,6 +15,10 @@ In a glyph window, double-click a component to jump to its base glyph. While you
 
 Assigns the “f” key to jump back to the “foreground” layer.
 
+### Hotkey – Nudge Align
+
+Hold the “Command” key while nudging with the arrow keys to align the selected points with other points or glyph metrics.
+
 ### Hotkey – Show/Hide Layers
 
 Assigns the “h” key to show/hide layer outlines.
