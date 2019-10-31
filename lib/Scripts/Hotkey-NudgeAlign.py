@@ -68,9 +68,9 @@ class ShowHideLayers():
         left = None
         right = None
         for c in g.contours:
-            for bPt in c.bPoints:
-                if bPt.selected:
-                    x, y = bPt.anchor
+            for pt in c.points:
+                if pt.selected:
+                    x, y = pt.x, pt.y
                     if left == None:
                         left = x
                         right = x
